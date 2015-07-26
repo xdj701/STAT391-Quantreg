@@ -152,7 +152,7 @@ arma::vec lpfnb(int p, int n, arma::mat &a,arma::vec &b, arma::vec &c, arma::vec
 }
 
 //[[Rcpp::export]]
-void rqfnb(NumericMatrix x, NumericVector y, double tau, double beta, double eps){
+List rqfnb(NumericMatrix x, NumericVector y, double tau, double beta, double eps){
 
 	int n = y.length();
 	int p = x.ncol();

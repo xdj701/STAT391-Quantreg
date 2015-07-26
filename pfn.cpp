@@ -27,7 +27,7 @@ NumericVector mat_times_vec(NumericMatrix x, NumericVector p);
 //fnb
 void stepy(arma::vec &b, arma::vec &d, arma::mat &a, arma::mat &ada);
 arma::vec lpfnb(int p, int n, arma::mat &a,arma::vec &b, arma::vec &c, arma::vec &x, double beta, double eps);
-void rqfnb(NumericMatrix x, NumericVector y, double tau, double beta, double eps);
+List rqfnb(NumericMatrix x, NumericVector y, double tau, double beta, double eps);
 
 //Call R function
 NumericVector quantile(NumericVector x, NumericVector probs);
@@ -407,7 +407,7 @@ arma::vec lpfnb(int p, int n, arma::mat &a,arma::vec &b, arma::vec &c, arma::vec
 }
 
 //[[Rcpp::export]]
-void rqfnb(NumericMatrix x, NumericVector y, double tau, double beta, double eps){
+List rqfnb(NumericMatrix x, NumericVector y, double tau, double beta, double eps){
 
 	int n = y.length();
 	int p = x.ncol();
